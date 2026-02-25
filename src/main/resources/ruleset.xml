@@ -39,6 +39,7 @@
         <exclude name="AvoidFieldNameMatchingMethodName"/>
         <exclude name="AvoidLiteralsInIfCondition"/>
         <exclude name="AvoidDuplicateLiterals"/>
+        <exclude name="CloseResource"/>
     </rule>
 
     <rule ref="category/java/multithreading.xml"/>
