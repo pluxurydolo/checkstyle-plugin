@@ -10,6 +10,8 @@ plugins {
 group = 'io.github.pluxurydolo'
 
 java {
+    withJavadocJar()
+    withSourcesJar()
     toolchain {
         languageVersion = JavaLanguageVersion.of(25)
     }
@@ -28,76 +30,33 @@ gradlePlugin {
     }
 }
 
-tasks.register('sourcesJar', Jar) {
-    from sourceSets.main.allJava
-    archiveClassifier = 'sources'
-}
-
-tasks.register('javadocJar', Jar) {
-    from javadoc
-    archiveClassifier = 'javadoc'
-}
-
 afterEvaluate {
     publishing {
         publications {
-            release(MavenPublication) {
-                from components.java
-                artifact tasks.named('sourcesJar')
-                artifact tasks.named('javadocJar')
-
+            withType(MavenPublication).configureEach {
                 pom {
                     name = 'checkstyle-plugin'
                     description = 'Checkstyle Plugin made for personal use'
-                    url = 'https://upload.wikimedia.org/wikipedia/en/c/ce/Randallkennedybook.jpg'
+                    url = 'https://github.com/pluxurydolo/checkstyle-plugin'
+
                     developers {
                         developer {
                             id = 'pluxurydolo'
                             name = 'Alexander'
                         }
                     }
+
                     scm {
                         url = 'scm:git:git://github.com/checkstyle-plugin.git'
                         connection = 'scm:git:git://github.com/checkstyle-plugin.git'
                         tag = project.version
                     }
+
                     licenses {
                         license {
                             name = 'The Apache License, Version 2.0'
                             url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
                         }
-                    }
-                }
-            }
-        }
-
-        publications.withType(MavenPublication).configureEach { publication ->
-            if (publication.name == 'release') return
-
-            publication.artifacts.clear()
-            publication.artifact jar
-            publication.artifact sourcesJar
-            publication.artifact javadocJar
-
-            publication.pom {
-                name = 'checkstyle-plugin'
-                description = 'Checkstyle Plugin made for personal use'
-                url = 'https://upload.wikimedia.org/wikipedia/en/c/ce/Randallkennedybook.jpg'
-                developers {
-                    developer {
-                        id = 'pluxurydolo'
-                        name = 'Alexander'
-                    }
-                }
-                scm {
-                    url = 'scm:git:git://github.com/checkstyle-plugin.git'
-                    connection = 'scm:git:git://github.com/checkstyle-plugin.git'
-                    tag = project.version
-                }
-                licenses {
-                    license {
-                        name = 'The Apache License, Version 2.0'
-                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
                     }
                 }
             }
@@ -118,15 +77,18 @@ jreleaser {
             skipTag.set true
         }
     }
+
     signing {
         active.set ALWAYS
         armored.set true
         verify.set true
     }
+
     project {
         inceptionYear.set '2026'
         author('@pluxurydolo')
     }
+
     deploy {
         maven {
             mavenCentral.create('sonatype') {
