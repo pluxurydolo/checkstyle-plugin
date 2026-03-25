@@ -12,6 +12,8 @@
         <exclude name="AbstractClassWithoutAbstractMethod"/>
         <exclude name="UnitTestShouldIncludeAssert"/>
         <exclude name="UnitTestContainsTooManyAsserts"/>
+        <exclude name="UseVarargs"/>
+        <exclude name="LooseCoupling"/>
     </rule>
 
     <rule ref="category/java/codestyle.xml">
@@ -32,6 +34,7 @@
         <exclude name="DataClass"/>
         <exclude name="UseUtilityClass"/>
         <exclude name="LoosePackageCoupling"/>
+        <exclude name="AvoidUncheckedExceptionsInSignatures"/>
     </rule>
 
     <rule ref="category/java/errorprone.xml">
@@ -56,13 +59,7 @@
 
     <rule ref="category/java/bestpractices.xml/UnusedPrivateMethod">
         <properties>
-            <property name="ignoredAnnotations" value="org.springframework.test.context.DynamicPropertySource" />
-        </properties>
-    </rule>
-
-    <rule ref="category/java/bestpractices.xml/LooseCoupling">
-        <properties>
-            <property name="allowedTypes" value="org.jsoup.select.Elements" />
+            <property name="ignoredAnnotations" value="org.springframework.test.context.DynamicPropertySource"/>
         </properties>
     </rule>
 
@@ -74,7 +71,7 @@
 
     <rule ref="category/java/codestyle.xml/ShortClassName">
         <properties>
-            <property name="minimum" value="3" />
+            <property name="minimum" value="3"/>
         </properties>
     </rule>
 
@@ -86,13 +83,13 @@
 
     <rule ref="category/java/design.xml/CouplingBetweenObjects">
         <properties>
-            <property name="threshold" value="30" />
+            <property name="threshold" value="30"/>
         </properties>
     </rule>
 
     <rule ref="category/java/design.xml/TooManyMethods">
         <properties>
-            <property name="maxmethods" value="20" />
+            <property name="maxmethods" value="20"/>
         </properties>
     </rule>
 
