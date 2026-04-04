@@ -3,8 +3,10 @@ import static org.jreleaser.model.Active.ALWAYS
 plugins {
     id 'groovy-gradle-plugin'
     id 'maven-publish'
-    id 'org.jreleaser' version "$jreleaserVersion"
+
     id 'io.github.pluxurydolo.version-plugin' version "$versionPluginVersion"
+
+    id 'org.jreleaser' version "$jreleaserVersion"
 }
 
 group = 'io.github.pluxurydolo'
