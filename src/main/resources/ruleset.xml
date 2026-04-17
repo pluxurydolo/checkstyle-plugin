@@ -96,6 +96,12 @@
         </properties>
     </rule>
 
+    <rule ref="category/java/design.xml/ExcessiveParameterList">
+        <properties>
+            <property name="minimum" value="15" />
+        </properties>
+    </rule>
+
     <exclude-pattern>.*/generated/.*</exclude-pattern>
     <exclude-pattern>.*/target/.*</exclude-pattern>
     <exclude-pattern>.*/build/.*</exclude-pattern>
