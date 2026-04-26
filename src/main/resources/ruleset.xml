@@ -36,6 +36,8 @@
         <exclude name="LoosePackageCoupling"/>
         <exclude name="AvoidUncheckedExceptionsInSignatures"/>
         <exclude name="AbstractClassWithoutAnyMethod"/>
+        <exclude name="ExcessiveImports"/>
+        <exclude name="SignatureDeclareThrowsException"/>
     </rule>
 
     <rule ref="category/java/errorprone.xml">
