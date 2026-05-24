@@ -4,7 +4,7 @@ plugins {
     id 'groovy-gradle-plugin'
     id 'maven-publish'
 
-    id 'io.github.pluxurydolo.version-plugin' version "$versionPluginVersion"
+    id 'io.github.pluxurydolo.infrastructure-plugin' version "$infrastructurePluginVersion"
 
     id 'org.jreleaser' version "$jreleaserVersion"
 }
