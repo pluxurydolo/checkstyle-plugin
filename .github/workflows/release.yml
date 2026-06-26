@@ -67,6 +67,7 @@ jobs:
           fi
   publish:
     needs: bump-and-tag
+    if: needs.bump-and-tag.outputs.new_version != ''
     runs-on: ubuntu-latest
     environment: CI/CD
     permissions:
