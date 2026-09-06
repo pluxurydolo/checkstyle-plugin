@@ -107,6 +107,12 @@
         </properties>
     </rule>
 
+    <rule ref="category/java/codestyle.xml/VariableDeclarationUsageDistance">
+        <properties>
+            <property name="maxDistance" value="20"/>
+        </properties>
+    </rule>
+
     <exclude-pattern>.*/generated/.*</exclude-pattern>
     <exclude-pattern>.*/target/.*</exclude-pattern>
     <exclude-pattern>.*/build/.*</exclude-pattern>
