@@ -103,7 +103,7 @@
 
     <rule ref="category/java/design.xml/ExcessiveParameterList">
         <properties>
-            <property name="minimum" value="15" />
+            <property name="minimum" value="15"/>
         </properties>
     </rule>
 
