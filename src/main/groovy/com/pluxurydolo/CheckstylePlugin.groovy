@@ -24,7 +24,7 @@ class CheckstylePlugin implements Plugin<Project> {
         rulesetStream.close()
 
         project.extensions.configure(PmdExtension) { ext ->
-            ext.toolVersion = '7.22.0'
+            ext.toolVersion = '7.27.0'
             ext.consoleOutput = true
             ext.threads.set(8)
             ext.ruleSetFiles = project.files(rulesetFile.absolutePath)

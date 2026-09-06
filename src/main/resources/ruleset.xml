@@ -14,6 +14,7 @@
         <exclude name="UnitTestContainsTooManyAsserts"/>
         <exclude name="UseVarargs"/>
         <exclude name="LooseCoupling"/>
+        <exclude name="SystemPrintln"/>
     </rule>
 
     <rule ref="category/java/codestyle.xml">
@@ -32,7 +33,7 @@
     <rule ref="category/java/design.xml">
         <exclude name="LawOfDemeter"/>
         <exclude name="DataClass"/>
-        <exclude name="UseUtilityClass"/>
+        <exclude name="InstantiableUtilityClass"/>
         <exclude name="LoosePackageCoupling"/>
         <exclude name="AvoidUncheckedExceptionsInSignatures"/>
         <exclude name="AbstractClassWithoutAnyMethod"/>
